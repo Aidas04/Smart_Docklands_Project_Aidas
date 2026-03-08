@@ -4,11 +4,13 @@
  */
 package com.zero.hunger.care4dublinapp;
 
-/**
- *
- * @author User
- */
-public class NewRecordPage extends javax.swing.JFrame {
+/*
+Aidas Kibas
+08.03.26
+NewRecordPage.java
+*/
+
+public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java class type that allows for a simple GUI
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(NewRecordPage.class.getName());
 
@@ -28,21 +30,172 @@ public class NewRecordPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        closeBtn2 = new javax.swing.JButton();
+        clearBtn2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        nrpDisplay = new javax.swing.JTextArea();
+        nrpDisplayLabel = new javax.swing.JLabel();
+        newRecordPageLabel = new javax.swing.JLabel();
+        submitBtn = new javax.swing.JButton();
+        nameLabel = new javax.swing.JLabel();
+        issueLabel = new javax.swing.JLabel();
+        severityLabel = new javax.swing.JLabel();
+        nameField = new javax.swing.JTextField();
+        issueField = new javax.swing.JTextField();
+        severityField = new javax.swing.JTextField();
+        backBtn = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        closeBtn2.setBackground(new java.awt.Color(204, 204, 204));
+        closeBtn2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        closeBtn2.setText("Close App");
+        closeBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeBtn2ActionPerformed(evt);
+            }
+        });
+
+        clearBtn2.setBackground(new java.awt.Color(255, 102, 102));
+        clearBtn2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        clearBtn2.setText("Clear Display");
+
+        nrpDisplay.setEditable(false);
+        nrpDisplay.setBackground(new java.awt.Color(204, 204, 204));
+        nrpDisplay.setColumns(20);
+        nrpDisplay.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        nrpDisplay.setRows(5);
+        jScrollPane1.setViewportView(nrpDisplay);
+
+        nrpDisplayLabel.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        nrpDisplayLabel.setText("Display Area");
+
+        newRecordPageLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        newRecordPageLabel.setText("Care4Dublin - New Record Page");
+
+        submitBtn.setBackground(new java.awt.Color(204, 204, 204));
+        submitBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        submitBtn.setText("SUBMIT RECORD");
+        submitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitBtnActionPerformed(evt);
+            }
+        });
+
+        nameLabel.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        nameLabel.setText("NAME:");
+
+        issueLabel.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        issueLabel.setText("ISSUE:");
+
+        severityLabel.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        severityLabel.setText("SEVERITY:");
+
+        backBtn.setBackground(new java.awt.Color(204, 204, 204));
+        backBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(closeBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(newRecordPageLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(nrpDisplayLabel)
+                .addGap(122, 122, 122))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(clearBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(submitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
+                        .addGap(59, 59, 59))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(issueLabel)
+                                    .addComponent(nameLabel))
+                                .addGap(45, 45, 45))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(severityLabel)
+                                .addGap(18, 18, 18)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(issueField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(severityField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(nrpDisplayLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(newRecordPageLabel)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nameLabel))
+                        .addGap(34, 34, 34)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(issueLabel)
+                            .addComponent(issueField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(severityLabel)
+                            .addComponent(severityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                        .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(clearBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(closeBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void closeBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeBtn2ActionPerformed
+        System.exit(0); // This code closes the application
+    }//GEN-LAST:event_closeBtn2ActionPerformed
+
+    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
+        
+    }//GEN-LAST:event_submitBtnActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        LandingPage lp = new LandingPage();
+        lp.setVisible(true); // Allows for landing page to be visible
+        dispose(); // Disposes/closes the New Record Page
+    }//GEN-LAST:event_backBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +223,19 @@ public class NewRecordPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backBtn;
+    private javax.swing.JButton clearBtn2;
+    private javax.swing.JButton closeBtn2;
+    private javax.swing.JTextField issueField;
+    private javax.swing.JLabel issueLabel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField nameField;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JLabel newRecordPageLabel;
+    private javax.swing.JTextArea nrpDisplay;
+    private javax.swing.JLabel nrpDisplayLabel;
+    private javax.swing.JTextField severityField;
+    private javax.swing.JLabel severityLabel;
+    private javax.swing.JButton submitBtn;
     // End of variables declaration//GEN-END:variables
 }

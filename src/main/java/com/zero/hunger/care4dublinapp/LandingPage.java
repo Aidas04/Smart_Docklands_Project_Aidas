@@ -4,11 +4,13 @@
  */
 package com.zero.hunger.care4dublinapp;
 
-/**
- *
- * @author User
- */
-public class LandingPage extends javax.swing.JFrame {
+/*
+Aidas Kibas
+08.03.26
+LandingPage.java
+*/
+
+public class LandingPage extends javax.swing.JFrame { // JFrame is a java class type that allows for a simple GUI
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LandingPage.class.getName());
 
@@ -28,21 +30,136 @@ public class LandingPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        landingPageLabel = new javax.swing.JLabel();
+        closeBtn = new javax.swing.JButton();
+        clearBtn = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lpDisplay = new javax.swing.JTextArea();
+        viewRecordsBtn = new javax.swing.JButton();
+        newRecordBtn = new javax.swing.JButton();
+        nextRecordBtn = new javax.swing.JButton();
+        recentSolvedBtn = new javax.swing.JButton();
+        displayAreaLabel = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        landingPageLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        landingPageLabel.setText("Care4Dublin - Landing Page");
+
+        closeBtn.setBackground(new java.awt.Color(204, 204, 204));
+        closeBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        closeBtn.setText("Close App");
+        closeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeBtnActionPerformed(evt);
+            }
+        });
+
+        clearBtn.setBackground(new java.awt.Color(255, 102, 102));
+        clearBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        clearBtn.setText("Clear Display");
+
+        lpDisplay.setEditable(false);
+        lpDisplay.setBackground(new java.awt.Color(204, 204, 204));
+        lpDisplay.setColumns(20);
+        lpDisplay.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lpDisplay.setRows(5);
+        jScrollPane1.setViewportView(lpDisplay);
+
+        viewRecordsBtn.setBackground(new java.awt.Color(204, 204, 204));
+        viewRecordsBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        viewRecordsBtn.setText("VIEW RECORDS");
+
+        newRecordBtn.setBackground(new java.awt.Color(204, 204, 204));
+        newRecordBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        newRecordBtn.setText("NEW RECORD");
+        newRecordBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newRecordBtnActionPerformed(evt);
+            }
+        });
+
+        nextRecordBtn.setBackground(new java.awt.Color(204, 204, 204));
+        nextRecordBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        nextRecordBtn.setText("NEXT RECORD");
+
+        recentSolvedBtn.setBackground(new java.awt.Color(204, 204, 204));
+        recentSolvedBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        recentSolvedBtn.setText("RECENTLY SOLVED");
+
+        displayAreaLabel.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        displayAreaLabel.setText("Display Area");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(clearBtn)
+                .addGap(38, 38, 38)
+                .addComponent(closeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(landingPageLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(displayAreaLabel)
+                .addGap(121, 121, 121))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nextRecordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewRecordsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(recentSolvedBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(41, 41, 41)
+                    .addComponent(newRecordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(379, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(landingPageLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(viewRecordsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(nextRecordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(recentSolvedBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(128, 128, 128))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(displayAreaLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(closeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(78, 78, 78)
+                    .addComponent(newRecordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(302, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void closeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeBtnActionPerformed
+        System.exit(0); // This code closes the application
+    }//GEN-LAST:event_closeBtnActionPerformed
+
+    private void newRecordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newRecordBtnActionPerformed
+        NewRecordPage nrp = new NewRecordPage();
+        nrp.setVisible(true); // Allowing New Record Page to be visible
+        dispose(); // Disposes/closes the current page visible
+    }//GEN-LAST:event_newRecordBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +187,15 @@ public class LandingPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton clearBtn;
+    private javax.swing.JButton closeBtn;
+    private javax.swing.JLabel displayAreaLabel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel landingPageLabel;
+    private javax.swing.JTextArea lpDisplay;
+    private javax.swing.JButton newRecordBtn;
+    private javax.swing.JButton nextRecordBtn;
+    private javax.swing.JButton recentSolvedBtn;
+    private javax.swing.JButton viewRecordsBtn;
     // End of variables declaration//GEN-END:variables
 }

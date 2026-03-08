@@ -6,7 +6,7 @@
 /*
 Aidas Kibas
 08.03.26
-Care4DublinApp - CA1 for Data Structures and Algorithms
+Care4DublinApp.java - CA1 for Data Structures and Algorithms
 */
 
 package com.zero.hunger.care4dublinapp;
