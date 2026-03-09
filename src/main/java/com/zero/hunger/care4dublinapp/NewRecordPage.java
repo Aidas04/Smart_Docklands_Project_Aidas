@@ -13,11 +13,26 @@ NewRecordPage.java
 public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java class type that allows for a simple GUI
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(NewRecordPage.class.getName());
-
+    private static int nextId = 1; // Declaring a static variable called nextID
     /**
      * Creates new form NewRecordPage
      */
+    
+    /* Declaring 3 interface variables that i will use to connect my adts to 
+    the gui classes. */
+    
+    QueueInterface qi;
+    PQInterface pqi;
+    SLLInterface slli;
+    
     public NewRecordPage() {
+        
+        /* Here i take the 3 variables and assign them to their respected 
+        adt classes to ensure i can perform all the necessary functions. */
+        
+        qi = new MyQueue();
+        pqi = new MyPriorityQueue();
+        slli = new MySLL();
         initComponents();
     }
 
@@ -195,14 +210,47 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         String name = nameField.getText().trim(); // Takes each input as a String variable
         String issue = issueField.getText().trim();
-        String severity = severityField.getText().trim();
+        String severityText = severityField.getText().trim();
         
-        if(name.isEmpty() || issue.isEmpty() || severity.isEmpty()){ // Ensures all fields have been filled in
+        if(name.isEmpty() || issue.isEmpty() || severityText.isEmpty()){ // Ensures all fields have been filled in
             nrpDisplay.append("Please fill all the fields of the form...\n"); // Displays this message if not
         } else{
             
+            /* Declaring severity as an int and parsing the string version from
+            the severityText to ensure it functions as an int in the code. */
+            
+            int severity = Integer.parseInt(severityText);
             
             
+            /* Declaring a variable called id. Every new record will add 1 to
+            the id to ensure the id is unique - this is useful for updating
+            records and ensuring all records are unique. */
+            
+            int id = nextId++; 
+            String status = "Pending"; // Stores unresolved issues as pending
+            
+            Issue newIssue = new Issue(name, issue, severity, id, status);
+            
+            // Adding the inputs into all of the adts except stack
+            
+            slli.insert(newIssue);
+            qi.enqueue(newIssue);
+            pqi.insert(newIssue);
+            
+            // Message displayed once all fields are filled in 
+            
+            nrpDisplay.append("---------Record-Added---------\n"
+                    + "Name: "+name+"\n"
+                    + "Issue: "+issue+"\n"
+                    + "Severity: "+severity+"\n"
+                    + "------------------------------\n");
+            
+            /* This code simply reverts the inputs back to being empty after
+            the input has been submitted. */
+            
+            nameField.setText("");
+            issueField.setText("");
+            severityField.setText("");
         }
     }//GEN-LAST:event_submitBtnActionPerformed
 
