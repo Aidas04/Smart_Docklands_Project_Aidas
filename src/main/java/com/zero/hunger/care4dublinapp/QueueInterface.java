@@ -10,4 +10,10 @@ package com.zero.hunger.care4dublinapp;
  */
 public interface QueueInterface {
     
+    public void enqueue(Object item);
+    public Object dequeue();
+    public Object peek();
+    public boolean isEmpty();
+    public String display();
+    
 }

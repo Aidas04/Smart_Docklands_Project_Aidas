@@ -1,3 +1,4 @@
+com\zero\hunger\care4dublinapp\NewRecordPage$4.class
 com\zero\hunger\care4dublinapp\NewRecordPage.class
 com\zero\hunger\care4dublinapp\PQInterface.class
 com\zero\hunger\care4dublinapp\MyQueue.class
@@ -8,6 +9,7 @@ com\zero\hunger\care4dublinapp\Care4DublinApp.class
 com\zero\hunger\care4dublinapp\MyPriorityQueue.class
 com\zero\hunger\care4dublinapp\MyStack.class
 com\zero\hunger\care4dublinapp\QueueInterface.class
+com\zero\hunger\care4dublinapp\LandingPage$3.class
 com\zero\hunger\care4dublinapp\StackInterface.class
 com\zero\hunger\care4dublinapp\NewRecordPage$1.class
 com\zero\hunger\care4dublinapp\Issue.class

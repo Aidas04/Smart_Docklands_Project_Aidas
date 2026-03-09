@@ -10,4 +10,9 @@ package com.zero.hunger.care4dublinapp;
  */
 public interface StackInterface {
     
+    public void push(Object item);
+    public Object pop();
+    public Object peek();
+    public boolean isEmpty();
+    
 }

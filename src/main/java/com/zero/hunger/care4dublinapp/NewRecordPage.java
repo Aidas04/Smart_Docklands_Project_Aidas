@@ -59,6 +59,11 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
         clearBtn2.setBackground(new java.awt.Color(255, 102, 102));
         clearBtn2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         clearBtn2.setText("Clear Display");
+        clearBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearBtn2ActionPerformed(evt);
+            }
+        });
 
         nrpDisplay.setEditable(false);
         nrpDisplay.setBackground(new java.awt.Color(204, 204, 204));
@@ -188,7 +193,13 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
     }//GEN-LAST:event_closeBtn2ActionPerformed
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
+        String name = nameField.getText().trim(); // Takes each input as a String variable
+        String issue = issueField.getText().trim();
+        String severity = severityField.getText().trim();
         
+        if(name.isEmpty() || issue.isEmpty() || severity.isEmpty()){ // Ensures all fields have been filled in
+            nrpDisplay.append("Please fill all the fields of the form...\n"); // Displays this message if not
+        }
     }//GEN-LAST:event_submitBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
@@ -196,6 +207,10 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
         lp.setVisible(true); // Allows for landing page to be visible
         dispose(); // Disposes/closes the New Record Page
     }//GEN-LAST:event_backBtnActionPerformed
+
+    private void clearBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtn2ActionPerformed
+        nrpDisplay.setText(""); // All this code does is set the text in the display area to nothing - essentially clearing the display area
+    }//GEN-LAST:event_clearBtn2ActionPerformed
 
     /**
      * @param args the command line arguments

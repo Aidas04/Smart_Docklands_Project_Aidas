@@ -10,4 +10,10 @@ package com.zero.hunger.care4dublinapp;
  */
 public interface PQInterface {
     
+    public void insert(Object item);
+    public Object removeHighest();
+    public Object peek();
+    public boolean isEmpty();
+    public String display();
+    
 }

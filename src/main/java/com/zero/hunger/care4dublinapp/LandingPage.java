@@ -58,6 +58,11 @@ public class LandingPage extends javax.swing.JFrame { // JFrame is a java class 
         clearBtn.setBackground(new java.awt.Color(255, 102, 102));
         clearBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         clearBtn.setText("Clear Display");
+        clearBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearBtnActionPerformed(evt);
+            }
+        });
 
         lpDisplay.setEditable(false);
         lpDisplay.setBackground(new java.awt.Color(204, 204, 204));
@@ -160,6 +165,10 @@ public class LandingPage extends javax.swing.JFrame { // JFrame is a java class 
         nrp.setVisible(true); // Allowing New Record Page to be visible
         dispose(); // Disposes/closes the current page visible
     }//GEN-LAST:event_newRecordBtnActionPerformed
+
+    private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
+        lpDisplay.setText(""); // All this code does is set the text in the display area to nothing - essentially clearing the display area
+    }//GEN-LAST:event_clearBtnActionPerformed
 
     /**
      * @param args the command line arguments

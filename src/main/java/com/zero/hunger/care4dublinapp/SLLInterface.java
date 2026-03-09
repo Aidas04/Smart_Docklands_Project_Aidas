@@ -5,9 +5,17 @@
 package com.zero.hunger.care4dublinapp;
 
 /**
- *
- * @author User
+ * 08.03.26
+ * @author Aidas Kibas
+ * SLLInterface.java
  */
 public interface SLLInterface {
+    
+    public void insert(Object item);
+    public boolean delete(int id);
+    public void update(int id, Object item);
+    public Object search(int id);
+    public String displayAll();
+    public boolean isEmpty();
     
 }
