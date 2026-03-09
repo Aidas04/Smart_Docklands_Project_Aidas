@@ -199,6 +199,10 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
         
         if(name.isEmpty() || issue.isEmpty() || severity.isEmpty()){ // Ensures all fields have been filled in
             nrpDisplay.append("Please fill all the fields of the form...\n"); // Displays this message if not
+        } else{
+            
+            
+            
         }
     }//GEN-LAST:event_submitBtnActionPerformed
 
