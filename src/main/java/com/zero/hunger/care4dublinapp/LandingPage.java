@@ -17,6 +17,17 @@ public class LandingPage extends javax.swing.JFrame { // JFrame is a java class 
     /**
      * Creates new form LandingPage
      */
+    
+    /* Declaring 4 interface variables and declaring them as public static so 
+    that they can be shared across both GUI pages ensuring that the information
+    from the New Record Page input is the same that is accessed from 
+    the Landing Page. Also ensuring that they access the adt java classes. */
+    
+    public static QueueInterface qi = new MyQueue();
+    public static PQInterface pqi = new MyPriorityQueue();
+    public static SLLInterface slli = new MySLL();
+    public static StackInterface si = new MyStack();
+    
     public LandingPage() {
         initComponents();
     }
@@ -74,6 +85,11 @@ public class LandingPage extends javax.swing.JFrame { // JFrame is a java class 
         viewRecordsBtn.setBackground(new java.awt.Color(204, 204, 204));
         viewRecordsBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         viewRecordsBtn.setText("VIEW RECORDS");
+        viewRecordsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewRecordsBtnActionPerformed(evt);
+            }
+        });
 
         newRecordBtn.setBackground(new java.awt.Color(204, 204, 204));
         newRecordBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -169,6 +185,10 @@ public class LandingPage extends javax.swing.JFrame { // JFrame is a java class 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
         lpDisplay.setText(""); // All this code does is set the text in the display area to nothing - essentially clearing the display area
     }//GEN-LAST:event_clearBtnActionPerformed
+
+    private void viewRecordsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewRecordsBtnActionPerformed
+        lpDisplay.append(slli.displayAll()); // Displaying all pending records.
+    }//GEN-LAST:event_viewRecordsBtnActionPerformed
 
     /**
      * @param args the command line arguments

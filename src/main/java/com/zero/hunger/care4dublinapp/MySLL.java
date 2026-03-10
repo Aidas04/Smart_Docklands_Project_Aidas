@@ -68,13 +68,14 @@ public class MySLL implements SLLInterface{ //Ensuring MySLL implements SLLInter
          return null;
      }
      
-     /* The displayAll method checks if the sll is empty, thus returning null.
+     /* The displayAll method checks if the sll is empty, thus returning an 
+     error message.
      Otherwise a msg variable is declared and the loop iterates all the sll
      items returning them as strings to be displayed in the display area.*/
      
      public String displayAll(){
          if(sll.isEmpty()){
-             return null;
+             return "There are no records yet...\n";
          }
          
          String msg = "";

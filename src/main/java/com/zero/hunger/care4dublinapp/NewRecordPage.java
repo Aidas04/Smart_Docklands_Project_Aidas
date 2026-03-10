@@ -18,21 +18,7 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
      * Creates new form NewRecordPage
      */
     
-    /* Declaring 3 interface variables that i will use to connect my adts to 
-    the gui classes. */
-    
-    QueueInterface qi;
-    PQInterface pqi;
-    SLLInterface slli;
-    
     public NewRecordPage() {
-        
-        /* Here i take the 3 variables and assign them to their respected 
-        adt classes to ensure i can perform all the necessary functions. */
-        
-        qi = new MyQueue();
-        pqi = new MyPriorityQueue();
-        slli = new MySLL();
         initComponents();
     }
 
@@ -231,11 +217,14 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
             
             Issue newIssue = new Issue(name, issue, severity, id, status);
             
-            // Adding the inputs into all of the adts except stack
+            /* Adding the inputs into all of the adts except stack, whilst 
+            ensuring that the LandingPage communicates with the NewRecordPage
+            for the same data.
+            */
             
-            slli.insert(newIssue);
-            qi.enqueue(newIssue);
-            pqi.insert(newIssue);
+            LandingPage.slli.insert(newIssue);
+            LandingPage.qi.enqueue(newIssue);
+            LandingPage.pqi.insert(newIssue);
             
             // Message displayed once all fields are filled in 
             
