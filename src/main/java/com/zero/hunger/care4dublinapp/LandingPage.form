@@ -187,6 +187,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="NEXT RECORD"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextRecordBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="recentSolvedBtn">
       <Properties>
@@ -198,6 +201,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="RECENTLY SOLVED"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="recentSolvedBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="displayAreaLabel">
       <Properties>

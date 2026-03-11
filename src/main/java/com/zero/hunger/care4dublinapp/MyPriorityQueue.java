@@ -42,7 +42,7 @@ public class MyPriorityQueue implements PQInterface{ // Ensuring MyPriorityQueue
     /* The removeHighest method checks if the pq is empty, thus returning null. 
     Otherwise i created an int variable called highest that is empty. Then a 
     for loop iterates the pq and if the current issues severity is higher than
-    the severity of the int highest then highest is the issue with the highest 
+    the severity of the int highest, then highest is the issue with the highest 
     severity. Then the highest issue is removed.*/
     
     public Object removeHighest(){

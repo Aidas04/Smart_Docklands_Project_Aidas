@@ -103,10 +103,20 @@ public class LandingPage extends javax.swing.JFrame { // JFrame is a java class 
         nextRecordBtn.setBackground(new java.awt.Color(204, 204, 204));
         nextRecordBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         nextRecordBtn.setText("NEXT RECORD");
+        nextRecordBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextRecordBtnActionPerformed(evt);
+            }
+        });
 
         recentSolvedBtn.setBackground(new java.awt.Color(204, 204, 204));
         recentSolvedBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         recentSolvedBtn.setText("RECENTLY SOLVED");
+        recentSolvedBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recentSolvedBtnActionPerformed(evt);
+            }
+        });
 
         displayAreaLabel.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         displayAreaLabel.setText("Display Area");
@@ -189,6 +199,29 @@ public class LandingPage extends javax.swing.JFrame { // JFrame is a java class 
     private void viewRecordsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewRecordsBtnActionPerformed
         lpDisplay.append(slli.displayAll()); // Displaying all pending records.
     }//GEN-LAST:event_viewRecordsBtnActionPerformed
+
+    private void nextRecordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextRecordBtnActionPerformed
+        
+        Issue nxt = (Issue) pqi.removeHighest(); // Calling the removeHighest method
+        
+        if(nxt != null){ // If the PQ is NOT empty
+            slli.delete(nxt.getId()); // Delete the next record by Id in the sll
+            
+            si.push(nxt); // Push this record to the stack then
+            lpDisplay.append(nxt.toString()); // Display it to the display area
+            nxt.setStatus("Resolved"); // Set its status as resolved
+            
+        } else{ // If it is empty, show this error message
+            lpDisplay.append("There are no records in the system yet...\n");
+        }
+    }//GEN-LAST:event_nextRecordBtnActionPerformed
+
+    private void recentSolvedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recentSolvedBtnActionPerformed
+        lpDisplay.append(si.peek().toString()); /* Appending the peek method
+        from the MyStack class, ensuring it can be visible using the toString
+        method.
+        */ 
+    }//GEN-LAST:event_recentSolvedBtnActionPerformed
 
     /**
      * @param args the command line arguments

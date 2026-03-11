@@ -25,7 +25,7 @@ public class MyStack implements StackInterface{ // This class implements the Sta
         if(!(stack.isEmpty())){
         return stack.get(0);
         } else{ // If the stack is empty then it will be null - nothing
-            return null;
+            return "There are no recently solved records yet...\n";
         }
     }
     
