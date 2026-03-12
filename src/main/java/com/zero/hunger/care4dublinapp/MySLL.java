@@ -1,7 +1,10 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt 
+    to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to 
+    edit this template
  */
+
 package com.zero.hunger.care4dublinapp;
 
 import java.util.ArrayList; // Importing ArrayList
@@ -12,9 +15,11 @@ import java.util.ArrayList; // Importing ArrayList
  * MySLL.java
  */
 
-public class MySLL implements SLLInterface{ //Ensuring MySLL implements SLLInterface
+public class MySLL implements SLLInterface{ /* Ensuring MySLL implements 
+    SLLInterface which allows the methods from that class.*/
 
-    private ArrayList<Issue> sll = new ArrayList<>(); // Creating an ArrayList called sll
+    private ArrayList<Issue> sll = new ArrayList<>(); /*\ Creating an ArrayList 
+    called sll.*/
     
     // isEmpty method returns the empty sll
     

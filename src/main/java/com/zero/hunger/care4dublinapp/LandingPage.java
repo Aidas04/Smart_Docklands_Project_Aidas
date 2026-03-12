@@ -1,7 +1,10 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt 
+    to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to 
+    edit this template
  */
+
 package com.zero.hunger.care4dublinapp;
 
 /*
@@ -10,7 +13,8 @@ Aidas Kibas
 LandingPage.java
 */
 
-public class LandingPage extends javax.swing.JFrame { // JFrame is a java class type that allows for a simple GUI
+public class LandingPage extends javax.swing.JFrame { /* JFrame is a java class 
+    type that allows for a GUI.*/
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LandingPage.class.getName());
 
@@ -193,31 +197,37 @@ public class LandingPage extends javax.swing.JFrame { // JFrame is a java class 
     }//GEN-LAST:event_newRecordBtnActionPerformed
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
-        lpDisplay.setText(""); // All this code does is set the text in the display area to nothing - essentially clearing the display area
+        lpDisplay.setText(""); /* All this code does is set the text in the 
+        display area to nothing - essentially clearing the display area.*/
     }//GEN-LAST:event_clearBtnActionPerformed
 
     private void viewRecordsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewRecordsBtnActionPerformed
-        lpDisplay.append(slli.displayAll()); // Displaying all pending records.
+        // Displaying all pending records.
+        lpDisplay.append("-------Pending-Records-------\n"+slli.displayAll()); 
     }//GEN-LAST:event_viewRecordsBtnActionPerformed
 
     private void nextRecordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextRecordBtnActionPerformed
         
-        Issue nxt = (Issue) pqi.removeHighest(); // Calling the removeHighest method
+        // Calling the removeHighest method
+        
+        Issue nxt = (Issue) pqi.removeHighest(); 
         
         if(nxt != null){ // If the PQ is NOT empty
             slli.delete(nxt.getId()); // Delete the next record by Id in the sll
             
             si.push(nxt); // Push this record to the stack then
-            lpDisplay.append(nxt.toString()); // Display it to the display area
-            nxt.setStatus("Resolved"); // Set its status as resolved
+            // Display it to the display area
+            lpDisplay.append("---------Next-Record---------\n"+nxt.toString()); 
+            nxt.setStatus("Resolved"); // Set its status as resolved AFTER it has been displayed
             
         } else{ // If it is empty, show this error message
-            lpDisplay.append("There are no records in the system yet...\n");
+            lpDisplay.append("---------Next-Record---------\nThere are no records in the system yet...\n");
         }
     }//GEN-LAST:event_nextRecordBtnActionPerformed
 
     private void recentSolvedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recentSolvedBtnActionPerformed
-        lpDisplay.append(si.peek().toString()); /* Appending the peek method
+        lpDisplay.append("-----Recently-Solved-----\n"+si.peek().toString()); 
+        /* Appending the peek method
         from the MyStack class, ensuring it can be visible using the toString
         method.
         */ 

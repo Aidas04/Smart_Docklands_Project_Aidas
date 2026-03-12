@@ -1,7 +1,10 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt 
+    to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to 
+    edit this template
  */
+
 package com.zero.hunger.care4dublinapp;
 
 import java.util.ArrayList; // Importing ArrayList
@@ -11,11 +14,15 @@ import java.util.ArrayList; // Importing ArrayList
  * @author Aidas Kibas
  * MyQueue.java
  */
-public class MyQueue implements QueueInterface{ // Ensuring MyQueue implements QueueInterface
 
-    private ArrayList<Issue> queue = new ArrayList<>(); // Creating an ArrayList called queue
+public class MyQueue implements QueueInterface{ /* Ensuring MyQueue implements 
+    QueueInterface allowing the methods from that class.*/
+
+    private ArrayList<Issue> queue = new ArrayList<>(); /* Creating an 
+    ArrayList called queue.*/
     
-    /* Here the enqueue method will add the issue and add it from the back.*/
+    /* Here the enqueue method will add the issue and add it to the rear of the
+    queue.*/
     
     public void enqueue(Object item){    
         queue.add((Issue) item);       

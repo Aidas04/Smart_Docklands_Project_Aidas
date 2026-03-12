@@ -1,7 +1,10 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt 
+    to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to 
+    edit this template
  */
+
 package com.zero.hunger.care4dublinapp;
 
 /**
@@ -24,7 +27,8 @@ public class Issue {
     
     // Constructor of the data members
     
-    public Issue(String name, String issue, int severity, int id, String status){
+    public Issue(String name, String issue, int severity, int id, 
+            String status){
         
         this.name = name;
         this.issue = issue;
@@ -67,7 +71,7 @@ public class Issue {
     
     @Override
     public String toString(){
-        return "----------Record----------\n"+
+        return //"----------Record----------\n"+
                 "ID: " +id+
                 "\nName: " +name+
                 "\nIssue: " +issue+

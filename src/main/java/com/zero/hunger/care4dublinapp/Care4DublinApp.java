@@ -1,6 +1,16 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt 
+    to change this license
  */
+
+/* -----Application-Care4Dublin-----
+    - Simple GUI for all levels of users
+    - Create new Records for environmental issues in the Dublin Docks
+    - Store the records in different ADT's
+    - View Pending Records
+    - Display Next Record to be resolved by Dublin City Council
+    - Display most recently solved issue
+*/
 
 
 /*
@@ -18,7 +28,7 @@ public class Care4DublinApp {
     public static void main(String[] args) {
         
         LandingPage myLP = new LandingPage();
-        myLP.setVisible(true); // .setVisible(true) ensures the landing page can be seen
+        myLP.setVisible(true); // ensuring the landing page can be seen
         
     }
 }

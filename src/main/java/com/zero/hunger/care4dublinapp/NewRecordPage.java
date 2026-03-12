@@ -1,7 +1,10 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt 
+    to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to 
+    edit this template
  */
+
 package com.zero.hunger.care4dublinapp;
 
 /*
@@ -10,10 +13,12 @@ Aidas Kibas
 NewRecordPage.java
 */
 
-public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java class type that allows for a simple GUI
+public class NewRecordPage extends javax.swing.JFrame { /* JFrame is a java 
+    class type that allows for a simple GUI.*/
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(NewRecordPage.class.getName());
     private static int nextId = 1; // Declaring a static variable called nextID
+    
     /**
      * Creates new form NewRecordPage
      */
@@ -45,6 +50,8 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
         issueField = new javax.swing.JTextField();
         severityField = new javax.swing.JTextField();
         backBtn = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        priorityDisplay = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,6 +113,13 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
             }
         });
 
+        priorityDisplay.setEditable(false);
+        priorityDisplay.setColumns(20);
+        priorityDisplay.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        priorityDisplay.setRows(5);
+        priorityDisplay.setText("1 - Lowest Priority\n2 - Low Priority\n3 - Medium Priority\n4 - High Priority\n5 - Urgent Priority");
+        jScrollPane2.setViewportView(priorityDisplay);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -124,28 +138,31 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 67, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(clearBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(submitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
                         .addGap(59, 59, 59))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(issueLabel)
-                                    .addComponent(nameLabel))
-                                .addGap(45, 45, 45))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(severityLabel)
-                                .addGap(18, 18, 18)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(issueField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(severityField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(14, 14, 14)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(issueLabel)
+                                            .addComponent(nameLabel))
+                                        .addGap(45, 45, 45))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(severityLabel)
+                                        .addGap(18, 18, 18)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(nameField, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                                    .addComponent(issueField)
+                                    .addComponent(severityField))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
         );
@@ -159,10 +176,11 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(newRecordPageLabel)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -176,14 +194,18 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(severityLabel)
                             .addComponent(severityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                        .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(clearBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(closeBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 3, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(closeBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(clearBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15))))
         );
 
         pack();
@@ -199,14 +221,53 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
         String severityText = severityField.getText().trim();
         
         if(name.isEmpty() || issue.isEmpty() || severityText.isEmpty()){ // Ensures all fields have been filled in
-            nrpDisplay.append("Please fill all the fields of the form...\n"); // Displays this message if not
-        } else{
+            nrpDisplay.append("---------ERROR---------\nPlease fill all the fields of the form...\n"); // Displays this message if not
+        }
+        
+        /* The .matches() method ensures that the input for name and issue is 
+        a String as it would not make any sense for a name to be 123 or Bob1. 
+        The same for issue, there cannot be an issue called issue1 - not clear.
+        The code says if the name or issue does NOT match a-z, A-Z, or " space "
+        then display the error.*/
+        
+        if(!name.matches("[a-zA-Z ]+")){ 
+            nrpDisplay.append("---------ERROR---------\nName MUST contain letters only.\n");
+            return;
+        }
+        
+        if(!issue.matches("[a-zA-Z ]+")){
+            nrpDisplay.append("---------ERROR---------\nIssue MUST contain letters only.\n");
+            return;
+        }
+        
+        else{
             
             /* Declaring severity as an int and parsing the string version from
             the severityText to ensure it functions as an int in the code. */
             
-            int severity = Integer.parseInt(severityText);
+            int severity;
             
+            /*Here a try catch method checks if the severity that was parsed
+            is in NumberFormat (int). It would not make sense for the severity
+            to be "very serious" as then the PQ would not work. It was simpler
+            to ensure the input was a number.*/
+            
+            try{
+                severity = Integer.parseInt(severityText);
+            } catch(NumberFormatException e){
+                nrpDisplay.append("---------ERROR---------\nSeverity MUST be a number between 1-5.\n");
+                return;
+           
+            }
+            
+            /* Checking if the severity is between 1-5 before displaying 
+            the users input as a record added. I had this issue even when i 
+            entered a severity int beyond 1-5.*/
+            
+            if(severity < 1 || severity > 5){
+                nrpDisplay.append("---------ERROR---------\nSeverity MUST be between 1-5.\n");
+                return;
+            } 
             
             /* Declaring a variable called id. Every new record will add 1 to
             the id to ensure the id is unique - this is useful for updating
@@ -215,18 +276,18 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
             int id = nextId++; 
             String status = "Pending"; // Stores unresolved issues as pending
             
-            Issue newIssue = new Issue(name, issue, severity, id, status);
-            
-            /* Adding the inputs into all of the adts except stack, whilst 
+            /* Then adding the inputs into all of the adts except stack, whilst 
             ensuring that the LandingPage communicates with the NewRecordPage
             for the same data.
             */
-            
+  
+            Issue newIssue = new Issue(name, issue, severity, id, status);
+                
             LandingPage.slli.insert(newIssue);
             LandingPage.qi.enqueue(newIssue);
             LandingPage.pqi.insert(newIssue);
             
-            // Message displayed once all fields are filled in 
+            // Message displayed once all fields make sense
             
             nrpDisplay.append("---------Record-Added---------\n"
                     + "Name: "+name+"\n"
@@ -250,7 +311,8 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void clearBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtn2ActionPerformed
-        nrpDisplay.setText(""); // All this code does is set the text in the display area to nothing - essentially clearing the display area
+        nrpDisplay.setText(""); /* All this code does is set the text in the 
+        display area to nothing - essentially clearing the display area.*/
     }//GEN-LAST:event_clearBtn2ActionPerformed
 
     /**
@@ -285,11 +347,13 @@ public class NewRecordPage extends javax.swing.JFrame { // JFrame is a java clas
     private javax.swing.JTextField issueField;
     private javax.swing.JLabel issueLabel;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel newRecordPageLabel;
     private javax.swing.JTextArea nrpDisplay;
     private javax.swing.JLabel nrpDisplayLabel;
+    private javax.swing.JTextArea priorityDisplay;
     private javax.swing.JTextField severityField;
     private javax.swing.JLabel severityLabel;
     private javax.swing.JButton submitBtn;

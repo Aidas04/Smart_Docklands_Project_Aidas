@@ -1,7 +1,10 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt 
+    to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to 
+    edit this template
  */
+
 package com.zero.hunger.care4dublinapp;
 
 import java.util.ArrayList; // Importing ArrayList
@@ -12,9 +15,11 @@ import java.util.ArrayList; // Importing ArrayList
  * MyPriorityQueue.java
  */
 
-public class MyPriorityQueue implements PQInterface{ // Ensuring MyPriorityQueue implements PQInterface
+public class MyPriorityQueue implements PQInterface{ /* Ensuring MyPriorityQueue
+    implements PQInterface.*/
  
-    private ArrayList<Issue> pq = new ArrayList<>(); // Creating a ArrayList called pq
+    private ArrayList<Issue> pq = new ArrayList<>(); /* Creating a ArrayList 
+    called pq.*/
     
     /* The insert method adds the issue to the Priority Queue.*/
     
@@ -75,6 +80,6 @@ public class MyPriorityQueue implements PQInterface{ // Ensuring MyPriorityQueue
             msg += i.toString() + "\n";
         }
         
-        return msg;
+        return "---------Next-Record---------" + msg;
     }
 }
